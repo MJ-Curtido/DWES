@@ -1,3 +1,3 @@
-fullName = input('Introduce your full name.')
+name = input('Introduce your full name: ')
 
-print(len(fullName))
+print(len(name))
