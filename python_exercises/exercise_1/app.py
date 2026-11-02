@@ -8,15 +8,14 @@
 #7. La función debe devolver el diccionario y la lista filtrada.
 #8. Incluye una docstring que documente el propósito de cada función, sus parámetros y los valores que devuelve.
 
-def filter_list(wines_list: list) -> {'wines_dict': dict, 'wines_filtered': list}:
+def filter_list(wines_list: list) -> tuple[dict[str, bool], list[str]]:
 	""" 
 	Esta función requiere de una lista por parámetro y devuelve un diccionario con 2 propiedades:
 		Args:
 			- wines_list (list): lista de nombre de vinos
 		Returns:
-			- (dict):
-				+ 'wines_dict' (dict): diccionario de la lista pasada por parámetro con valor True o False según si contiene 'Sherry' el nombre
-				+ 'wines_filtered' (list): lista pasada por parámetro filtrada para que solo aparezan los que contienen 'Sherry' el nombre
+			- 'wines_dict' (dict): diccionario de la lista pasada por parámetro con valor True o False según si contiene 'Sherry' el nombre
+			- 'wines_filtered' (list): lista pasada por parámetro filtrada para que solo aparezan los que contienen 'Sherry' el nombre
 	"""
 	
 	wines_dict = {w: FILTER_WORD.lower() in w.lower() for w in wines_list}
@@ -24,7 +23,7 @@ def filter_list(wines_list: list) -> {'wines_dict': dict, 'wines_filtered': list
 	""" Utilizo la función filter para hacer un filtrado de la lista que viene por parámetro, esta función requiere de en primer parámetro la función que designa el filtrado y en segundo parámetro la lista a filtrar """
 	wines_filtered = list(filter(lambda w: FILTER_WORD.lower() in w.lower(), wines_list))
 
-	return {'wines_dict': wines_dict, 'wines_filtered': wines_filtered}
+	return wines_dict, wines_filtered
 
 if __name__ == '__main__':
 	vinos_jerez = [
@@ -37,41 +36,7 @@ if __name__ == '__main__':
 
 	FILTER_WORD = 'Sherry'
 
-	results = filter_list(vinos_jerez)
+	wines_dict, wines_filtered = filter_list(vinos_jerez)
 	
-	for res in results.values():
-		print(f'\n\t- {res}\n')
-
-
-# def filter_list(wines_list: list) -> {'wines_dict': dict, 'wines_filtered': list}:
-# 	""" 
-# 	Esta función requiere de una lista por parámetro y devuelve un diccionario con 2 propiedades:
-# 		Args:
-# 			- wines_list (list): lista de nombre de vinos
-# 		Returns:
-# 			- 'wines_dict' (dict): diccionario de la lista pasada por parámetro con valor True o False según si contiene 'Sherry' el nombre
-# 			- 'wines_filtered' (list): lista pasada por parámetro filtrada para que solo aparezan los que contienen 'Sherry' el nombre
-# 	"""
-	
-# 	wines_dict = {w: FILTER_WORD.lower() in w.lower() for w in wines_list}
-	
-# 	""" Utilizo la función filter para hacer un filtrado de la lista que viene por parámetro, esta función requiere de en primer parámetro la función que designa el filtrado y en segundo parámetro la lista a filtrar """
-# 	wines_filtered = list(filter(lambda w: FILTER_WORD.lower() in w.lower(), wines_list))
-
-# 	return wines_dict, wines_filtered
-
-# if __name__ == '__main__':
-# 	vinos_jerez = [
-# 		"Sherry Classic",
-# 		"Vino Blanco",
-# 		"Fino SHERRY",
-# 		"Moscatel",
-# 		"ShErry Cream"
-# 	]
-
-# 	FILTER_WORD = 'Sherry'
-
-# 	{wines_dict, wines_filtered} = filter_list(vinos_jerez)
-	
-# 	print(f'\n\t- {wines_dict}\n\n')
-# 	print(f'\n\t- {wines_filtered}\n\n')
+	print(f'\n\t- {wines_dict}\n\n')
+	print(f'\n\t- {wines_filtered}\n\n')
