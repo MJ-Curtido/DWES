@@ -1,7 +1,13 @@
 def score_round(score):
+	"""
+	Redondeo de puntuación.
+	"""
 	return round(score, 2)
 
 def score_average(scores):
+	"""
+	Calcular media de puntuaciones.
+	"""
 	return sum(scores) / len(scores)
 
 def calcula_media_puntuaciones(grupos: dict, *puntuaciones_extra: tuple, ag: str | None =None, fase: str | None =None) -> dict:
