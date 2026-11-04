@@ -40,7 +40,7 @@ def calcula_media_puntuaciones(grupos: dict, *puntuaciones_extra: tuple, ag: str
 				""" Mismo procedimiento para 'fases' que para 'ag' """
 				phases_filtered = {}
 
-				if fase: phases_filtered = dict(filter(lambda p: p[0] == fase, phases.items()))
+				if ag and fase: phases_filtered = dict(filter(lambda p: p[0] == fase, phases.items()))
 				else: phases_filtered = phases
 
 				if len(phases_filtered) > 0:
