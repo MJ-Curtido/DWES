@@ -1,6 +1,9 @@
 def score_round(score):
 	return round(score, 2)
 
+def score_average(scores):
+	return sum(scores) / len(scores)
+
 def calcula_media_puntuaciones(grupos: dict, *puntuaciones_extra: tuple, ag: str or None =None, fase: str or None =None) -> dict:
 	"""
 	Esta función calcula las puntuaciones de los grupos de carnavales.
@@ -45,14 +48,11 @@ def calcula_media_puntuaciones(grupos: dict, *puntuaciones_extra: tuple, ag: str
 						if puntuaciones_extra and fase and ag:
 							scores_rounded.extend(puntuaciones_extra)
 
-						avg = sum(scores_rounded) / len(scores_rounded)
-
-						score_phases.append(avg)
+						score_phases.append(score_average(scores_rounded))
 					
-					avg = score_round(sum(score_phases) / len(score_phases))
+					avg = score_round(score_average(score_phases))
 					
 					""" Creamos la agrupación con la media de puntuación dentro de la modalidad creada anteriormente. """
 					result[modality][team] = avg
 	
 	return result
-
