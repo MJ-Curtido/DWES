@@ -4,7 +4,7 @@ def score_round(score):
 def score_average(scores):
 	return sum(scores) / len(scores)
 
-def calcula_media_puntuaciones(grupos: dict, *puntuaciones_extra: tuple, ag: str or None =None, fase: str or None =None) -> dict:
+def calcula_media_puntuaciones(grupos: dict, *puntuaciones_extra: tuple, ag: str | None =None, fase: str | None =None) -> dict:
 	"""
 	Esta función calcula las puntuaciones de los grupos de carnavales.
 		Args:
