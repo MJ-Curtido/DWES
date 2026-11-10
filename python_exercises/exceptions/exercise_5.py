@@ -1,22 +1,30 @@
 """ Se ejecuta el finally siempre porque es su función, aunque falle o no, siempre se ejecuta. """
-try:
-	print(int("3.5")) # --> ValueError
-	print([1, 2][5]) # --> IndexError
-	print({}["x"]) # --> KeyError
-	print("a" + 1) # --> TypeError
-	print(1 / 0) # --> ZeroDivisionError
-	print(float("1,5")) # --> ValueError
-except ValueError:
-	print('ValueError')
-except IndexError:
-	print('IndexError')
-except KeyError:
-	print('KeyError')
-except TypeError:
-	print('TypeError')
-except ZeroDivisionError:
-	print('ZeroDivisionError')
-except Exception as e:
-	print(e)
-finally:
-	print('Esto ocurre aunque falle, porque está en el finally.')
+def search_file():
+	while True:
+		path = input('\nIntroduce a file path:')
+
+		if path == 'exit':
+			break
+
+		print('\n')
+
+		try:
+			with open(path) as f:
+				for i in range(3):
+					line = f.readline()
+
+					if not line:
+						break
+
+					print(f'{line}')
+
+		except FileNotFoundError:
+			print('Archivo no encontrado.')	
+		except Exception as e:
+			print(e)
+		else:
+			f.close()
+		finally:
+			print('Esto ocurre aunque falle, porque está en el finally.')
+
+search_file()
