@@ -9,3 +9,9 @@ def portada(request):
 
 def listado(request):
 	return HttpResponse("Aquí irá el listado de bares")
+	# return HttpResponse("<h2>Prueba</h2>Aquí irá el listado de bares", content_type="text/plain; charset=utf-8")
+
+def info(request):
+	return HttpResponse(
+		"<p>Esta guía está escrita por Manuel Jesús Curtido Rosado en Python con Django</p>"
+	)
