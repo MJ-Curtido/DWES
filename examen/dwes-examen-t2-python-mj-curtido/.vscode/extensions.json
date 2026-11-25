@@ -1,0 +1,7 @@
+{
+  // Examen: extensiones de IA que no deben usarse en este proyecto.
+  "unwantedRecommendations": [
+    "github.copilot",
+    "github.copilot-chat"
+  ]
+}

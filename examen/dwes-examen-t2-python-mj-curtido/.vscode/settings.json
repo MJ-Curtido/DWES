@@ -1,0 +1,28 @@
+{
+  // Examen: sin ayudas del editor. NO modificar este fichero.
+
+  // --- IA: Copilot, chat, sugerencias en línea y de próxima edición ---
+  "chat.disableAIFeatures": true,
+  "github.copilot.enable": { "*": false },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "editor.inlineSuggest.enabled": false,
+
+  // --- Autocompletado y sugerencias ---
+  "editor.quickSuggestions": { "other": "off", "comments": "off", "strings": "off" },
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.wordBasedSuggestions": "off",
+  "editor.snippetSuggestions": "none",
+  "editor.tabCompletion": "off",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.parameterHints.enabled": false,
+
+  // --- Ayudas contextuales: información al pasar el ratón, bombilla, formateo ---
+  "editor.hover.enabled": "off",
+  "editor.lightbulb.enabled": "off",
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {},
+
+  // --- Python: sin servidor de lenguaje (sin completado, información ni diagnósticos de Pylance) ---
+  "python.languageServer": "None"
+}

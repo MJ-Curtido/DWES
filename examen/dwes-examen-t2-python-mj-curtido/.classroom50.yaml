@@ -1,0 +1,13 @@
+schema: "classroom50/repo-config/v1"
+classroom: "dwes"
+assignment: "examen-t2-python"
+secret: "gbyl8d7s"
+owner:
+  username: "MJ-Curtido"
+  id: 112872240
+  accepted_at: "2026-11-23T07:18:16Z"
+source:
+  owner: "daw-dwes-26-27"
+  owner_id: 353314613
+  repo: "examen-t2-python-plantilla"
+  branch: "main"
